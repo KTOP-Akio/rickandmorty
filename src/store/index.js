@@ -27,9 +27,14 @@ export const useMainStore = defineStore("store", {
         this.count = response.data.info.count;
         this.pages = response.data.info.pages;
       } catch (error) {
-        if (error.response.status == 404) {
-          this.characters = [];
-        }
+        // if (error.response.status == 404) {
+        //   this.characters = [];
+        //   this.count = response.data.info.count;
+        //   this.pages = response.data.info.pages;
+        // }
+        this.characters = [];
+        this.count = 0;
+        this.pages = 0;
       }
       this.loading = false;
     },
